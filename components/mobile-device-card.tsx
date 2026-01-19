@@ -34,7 +34,7 @@ export function MobileDeviceCard({ device, index }: { device: Device; index: num
     const t = device.latest_telemetry;
 
     return (
-        <Link href={`/devices/${device.id}`}>
+        <Link href={`/devices/view?id=${device.id}`}>
             <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -87,8 +87,8 @@ export function MobileDeviceCard({ device, index }: { device: Device; index: num
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2 shadow-md shadow-blue-500/20">
                             <Droplets className="w-5 h-5 text-white" />
                         </div>
-                        <span className="text-3xl font-bold text-slate-900">{t?.hum_pct?.toFixed(0) ?? "--"}</span>
-                        <span className="text-[10px] text-slate-500 uppercase tracking-widest">%</span>
+                        <span className="text-3xl font-bold text-slate-900">{t?.hum_pct?.toFixed(1) ?? "--"}</span>
+                        <span className="text-[10px] text-slate-500 uppercase tracking-widest">°F</span>
                     </motion.div>
                 </div>
 
