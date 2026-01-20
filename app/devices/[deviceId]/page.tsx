@@ -1,6 +1,11 @@
 "use client";
 
 import { useQuery, useMutation } from "@tanstack/react-query";
+
+// Required for Next.js static export with dynamic routes
+export function generateStaticParams() {
+    return [];
+}
 import { useParams, useRouter } from "next/navigation";
 import api from "@/lib/axios";
 import { ArrowLeft, Thermometer, Droplets, Flame, Wind, RotateCw, Power, RefreshCcw, Brain, Sparkles, Lightbulb, Wifi, Zap, Clock, Activity } from "lucide-react";
